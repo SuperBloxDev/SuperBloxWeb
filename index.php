@@ -1,14 +1,18 @@
+<?php
+require_once $_SERVER["DOCUMENT_ROOT"] . '/reactor.php';
+?>
+
 <!DOCTYPE html>
 <!--[if IE 8]><html class="ie8" ng-app="robloxApp"><![endif]-->
 <!--[if gt IE 8]><!-->
 <html>
 <!--<![endif]-->
-    <title>ROBLOX.com</title>
+    <title><?= name; ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,requiresActiveX=true"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="ROBLOX Corporation"/>
-    <meta name="description" content="ROBLOX is powered by a growing community of over 300,000 creators who produce an infinite variety of highly immersive experiences. These experiences range from 3D multiplayer games and competitions, to interactive adventures where friends can take on new personas imagining what it would be like to be a dinosaur, a miner in a quarry or an astronaut on a space exploration."/>
+    <meta name="author" content="<?= name; ?>"/>
+    <meta name="description" content="<?= name; ?> is powered by a growing community of over 300,000 creators who produce an infinite variety of highly immersive experiences. These experiences range from 3D multiplayer games and competitions, to interactive adventures where friends can take on new personas imagining what it would be like to be a dinosaur, a miner in a quarry or an astronaut on a space exploration."/>
     <meta name="keywords" content="free games, online games, building games, virtual worlds, free mmo, gaming cloud, physics engine"/>
     <meta name="apple-itunes-app" content="app-id=431946152"/>
     <meta name="google-site-verification" content="KjufnQUaDv5nXJogvDMey4G-Kb7ceUVxTdzcMaP9pCY"/>
@@ -25,27 +29,27 @@
     <script type="text/javascript">window.jQuery || document.write("<script type='text/javascript' src='/js/jquery/jquery-migrate-1.2.1.js'><\/script>")</script>
     <script type="text/javascript" src="https://js.rbxcdn.com/3546f3053a4d1804430cfda9ebfe98f5.js"></script>
 
-    <meta property="og:site_name" content="ROBLOX"/>
-    <meta property="og:title" content="ROBLOX"/>
+    <meta property="og:site_name" content="<?= name; ?>"/>
+    <meta property="og:title" content="<?= name; ?>"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://www.roblox.com/"/>
-    <meta property="og:description" content="ROBLOX is powered by a growing community of over 300,000 creators who produce an infinite variety of highly immersive experiences. These experiences range from 3D multiplayer games and competitions, to interactive adventures where friends can take on new personas imagining what it would be like to be a dinosaur, a miner in a quarry or an astronaut on a space exploration."/>
+    <meta property="og:description" content="<?= name; ?> is powered by a growing community of over 300,000 creators who produce an infinite variety of highly immersive experiences. These experiences range from 3D multiplayer games and competitions, to interactive adventures where friends can take on new personas imagining what it would be like to be a dinosaur, a miner in a quarry or an astronaut on a space exploration."/>
     <meta property="og:image" content="https://images.rbxcdn.com/fb70fd2b56107a0d43f2f98658885702.jpg"/>
     <meta property="fb:app_id" content="190191627665278">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@ROBLOX">
-    <meta name="twitter:title" content="ROBLOX">
-    <meta name="twitter:description" content="ROBLOX is powered by a growing community of over 300,000 creators who produce an infinite variety of highly immersive experiences. These experiences range from 3D multiplayer games and competitions, to interactive adventures where friends can take on new personas imagining what it would be like to be a dinosaur, a miner in a quarry or an astronaut on a space exploration.">
+    <meta name="twitter:site" content="@ idk"> <!-- REPLACE!!! -->
+    <meta name="twitter:title" content="<?= name; ?>">
+    <meta name="twitter:description" content="<?= name; ?> is powered by a growing community of over 300,000 creators who produce an infinite variety of highly immersive experiences. These experiences range from 3D multiplayer games and competitions, to interactive adventures where friends can take on new personas imagining what it would be like to be a dinosaur, a miner in a quarry or an astronaut on a space exploration.">
     <meta name="twitter:creator">
     <meta name="twitter:image1" content="https://images.rbxcdn.com/fb70fd2b56107a0d43f2f98658885702.jpg"/>
     <meta name="twitter:app:country" content="US">
-    <meta name="twitter:app:name:iphone" content="ROBLOX Mobile">
+    <meta name="twitter:app:name:iphone" content="<?= name; ?> Mobile">
     <meta name="twitter:app:id:iphone" content="431946152">
     <meta name="twitter:app:url:iphone">
-    <meta name="twitter:app:name:ipad" content="ROBLOX Mobile">
+    <meta name="twitter:app:name:ipad" content="<?= name; ?> Mobile">
     <meta name="twitter:app:id:ipad" content="431946152">
     <meta name="twitter:app:url:ipad">
-    <meta name="twitter:app:name:googleplay" content="ROBLOX">
+    <meta name="twitter:app:name:googleplay" content="<?= name; ?>">
     <meta name="twitter:app:id:googleplay" content="com.roblox.client">
     <meta name="twitter:app:url:googleplay"/>
 
@@ -99,6 +103,17 @@
         margin-right: -10px;
         width: calc(33.333333% - 10px);
     }
+
+    .alert-info {
+    background-color: #F68802;
+    border: 0 none;
+    margin: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1em;
+    padding: 12px 0;
+}
 </style>
 <div class="navbar navbar-landing navbar-fixed-top" role="navigation">
     <div class="container">
@@ -143,9 +158,9 @@
                 <div class="col-xs-12 col-md-6">
                     <div id="MainLogo" class="text-right">
                         <div id="LogoAndSlogan" class="text-center">
-                            <img id="MainLogoImage" title="ROBLOX" class="center-block img-responsive" src="https://images.rbxcdn.com/39ae3ca577c8488487ef492031b8e264.png"/>
+                            <img id="MainLogoImage" title="<?= name; ?>" class="center-block img-responsive" src="/assets/logo/landing_full.png"/> <!-- https://images.rbxcdn.com/39ae3ca577c8488487ef492031b8e264.png -->
                             <div class="clearfix"></div>
-                            <h1>Powering Imagination<span> &#8482; </span></h1>
+                            <h1>Powered by <i style="font-family:Comic Sans MS;">supper</i><span> &#8482; </span></h1>
                         </div>
                     </div>
                 </div>
@@ -179,7 +194,7 @@
     <div class="signup-container" ng-controller="SignupController" ng-show="isSectionShown">
         <div class="signup-input-area" ng-form name="signupForm" rbx-form-context context="RollerCoaster">
              
-<img src="/timg/rbx" style="position: absolute"/>
+<img src="/timg/rbx.png" style="position: absolute"/>
 <!-- BACKEND HERE!!! u can get rid of the ng- stuff cuz thats not rly needed -->
             <div class="form-group" ng-class="{'has-error' : (badSubmit || signupForm.username.$dirty) &amp;&amp; signupForm.username.$invalid, 'has-success': (signupForm.username.$dirty &amp;&amp; signupForm.username.$valid) }">
                 <input id="signup-username" ng-trim="false" ng-change="onChange()" name="username" class="form-control input-field" type="text" tabindex="1" rbx-valid-username rbx-form-interaction rbx-form-validation placeholder="Username (length 3-20, _ is allowed)" ng-model="signup.username"/>
@@ -238,15 +253,15 @@
                         <!-- BACKEND HERE!!! transgender pls.. -->
                             <div id="FemaleButton" class="gender-circle" tabindex="7" rbx-form-interaction name="genderFemale" ng-class="{ 'selected-gender': signup.gender == 3 }" ng-click="setGender($event, 3)" ng-keypress="setGender($event, 3)">
                                 <div class="cover-sprite gender female"></div>
-                    </div>
+                            </div>
                             <div id="MaleButton" class="gender-circle" tabindex="8" rbx-form-interaction name="genderMale" ng-class="{ 'selected-gender': signup.gender == 2 }" ng-click="setGender($event, 2)" ng-keypress="setGender($event, 2)">
                                 <div class="cover-sprite gender male"></div>
-                    </div>
+                            </div>
                     </div>
                     <p id="signup-GenderInputValidation" class="form-control-label input-validation text-error" ng-bind="(badSubmit &amp;&amp; !(signup.gender == 2 || signup.gender == 3)) ? 'Gender is required' : ''"></p>
                 </div>
             </div>
-            <button id="signup-button" type="button" tabindex="9" class="btn-primary-md signup-submit-button" rbx-form-interaction name="signupSubmit" ng-disabled="isSubmitting" data-signup-api-url="https://api.roblox.com/signup/v1" ng-click="submitSignup($event)" ng-keypress="submitSignup($event)">Sign Up</button>
+            <button id="signup-button" type="submit" tabindex="9" class="btn-primary-md signup-submit-button" rbx-form-interaction name="signupSubmit" ng-disabled="isSubmitting" data-signup-api-url="https://api.roblox.com/signup/v1" ng-click="submitSignup($event)" ng-keypress="submitSignup($event)">Sign Up</button>
             <noscript>
                 <div class="text-danger">
                     <strong>JavaScript is required to submit this form.</strong>
@@ -286,9 +301,9 @@
 
             <div class="row" id="InnerWhatsRobloxContainer1">
                 <div id="WhatIsRobloxTextBg" class="col-sm-5 col-sm-offset-6 col-xs-8 col-xs-offset-2">
-                    <h1 class="text-center">WHAT IS ROBLOX?</h1>
+                    <h1 class="text-center">WHAT IS <?= name; ?>?</h1>
                     <p class="lead text-justify">
-                        ROBLOX is the best place to Imagine with Friends™. With the largest user-generated online gaming platform, and over 15 million games created by users, ROBLOX is the #1 gaming site for kids and teens (comScore). Every day, virtual explorers come to ROBLOX to create adventures, play games, role play, and learn with their friends in a family-friendly, immersive, 3D environment.
+                        <?= name; ?> is the best place to Imagine with Friends™. With the largest user-generated online gaming platform, and over 15 million games created by users, <?= name; ?> is the #1 gaming site for kids and teens (comScore). Every day, virtual explorers come to <?= name; ?> to create adventures, play games, role play, and learn with their friends in a family-friendly, immersive, 3D environment.
                     </p>
                 </div>
             </div>
@@ -307,9 +322,9 @@
     <section id="DeviceSection">
         <div class="row" id="RobloxDeviceText">
             <div class="col-md-6 col-md-offset-3 text-center">
-                <h2>ROBLOX ON YOUR DEVICE</h2>
+                <h2><?= name; ?> ON YOUR DEVICE</h2>
                 <p class="lead center-block">
-                    You can access ROBLOX on PC and Android. ROBLOX adventures are accessible from any device, so players can imagine with their friends regardless of where they are.
+                    You can access <?= name; ?> on PC and Android. <?= name; ?> adventures are accessible from any device, so players can imagine with their friends regardless of where they are.
                 </p>
             </div>
         </div>
@@ -327,6 +342,9 @@
 
 <footer class="container-footer">
     <div class="footer">
+        <div class="alert-container">
+          	<div class="alert-info" role="alert">these links go to roblox.com so like do something pls</div>
+        </div>
         <ul class="row footer-links">
                 <li class="col-4 col-xs-2 footer-link">
                     <a href="https://corp.roblox.com/" class="text-footer-nav roblox-interstitial" target="_blank">
@@ -360,15 +378,15 @@
             </li>
         </ul>
         <p class="text-footer footer-note">
-            ROBLOX, "Online Building Toy", characters, logos, names, and all related indicia are trademarks of <a target="_blank" href="https://corp.roblox.com/" class="text-link roblox-interstitial">ROBLOX Corporation</a>, ©2016.
-            Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K'Nex, and no resemblance to the products of these companies is intended.
-            Use of this site signifies your acceptance of the <a href="https://www.roblox.com/info/terms-of-service" target="_blank" class="text-link">Terms and Conditions</a>.
+            <?= name; ?> is an independent project and is not affiliated with, sponsored by, or endorsed by Roblox Corporation. 
+            All characters, logos, names, and related indicia used here are trademarks of their respective owners.  ©2025 <?= name; ?>.
+            Use of this site signifies your acceptance of the <a href="/info/terms-of-service" target="_blank" class="text-link">Terms and Conditions</a>.
         </p>
     </div>
 </footer>
 </div>
 
-<img src="/timg/rbx" style="position: absolute"/>
+<img src="/timg/rbx.png" style="position: absolute"/>
     
 <script type="text/javascript" src="https://js.rbxcdn.com/a29db588a0856ac878b3848fd0fd308e.js"></script>
 <script type="text/javascript" src="https://js.rbxcdn.com/5f2b6fcc9bed78d8c184c449ca7fb2a1.js"></script>
