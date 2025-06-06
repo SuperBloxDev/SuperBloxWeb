@@ -1,4 +1,6 @@
 Options -Indexes
+AddType application/x-httpd-php .ashx
+AddType application/x-httpd-php .aspx
 RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-d
