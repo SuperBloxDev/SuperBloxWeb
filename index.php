@@ -1,5 +1,6 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . '/reactor.php';
+$randomslogan = $slogans[array_rand($slogans)];
 ?>
 
 <!DOCTYPE html>
@@ -160,7 +161,7 @@ require_once $_SERVER["DOCUMENT_ROOT"] . '/reactor.php';
                         <div id="LogoAndSlogan" class="text-center">
                             <img id="MainLogoImage" title="<?= name; ?>" class="center-block img-responsive" src="/assets/logo/landing_full.png"/> <!-- https://images.rbxcdn.com/39ae3ca577c8488487ef492031b8e264.png -->
                             <div class="clearfix"></div>
-                            <h1>Powered by <i style="font-family:Comic Sans MS;">supper</i><span> &#8482; </span></h1>
+                            <h1><?= $randomslogan ?></h1>
                         </div>
                     </div>
                 </div>
