@@ -44,15 +44,6 @@ $project = [
     'desc' => ''
 ];
 
-$slogans = [
-    "Relive the retro",
-    "What could possibly go wrong with this?",
-    "Powering Imagination",
-    "You Make The Game",
-    "Built with PHP, btw"
-];
-    
-
 foreach ($project as $key => $value) {
     define($key, $value);
 }
