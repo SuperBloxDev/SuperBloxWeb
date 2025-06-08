@@ -1,5 +1,14 @@
 <?php
 require_once $_SERVER["DOCUMENT_ROOT"] . '/reactor.php';
+
+$slogans = [
+    "Relive the retro",
+    "What could possibly go wrong with this?",
+    "Powering Imagination",
+    "You Make The Game",
+    "Built with PHP, btw"
+];
+
 $randomslogan = $slogans[array_rand($slogans)];
 ?>
 
